@@ -2,4 +2,5 @@
 
 import num from './test';
 
-console.log(`i imported ${num} from another module`);
+const x = 23;
+console.log(`i imported ${num} from another module Var x is ${x}`);
