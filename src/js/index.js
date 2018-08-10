@@ -1,6 +1,4 @@
-// Global app controller
+import str from './models/Search';
+import { add, multiply, ID } from './views/searchView';
 
-import num from './test';
-
-const x = 23;
-console.log(`i imported ${num} from another module Var x is ${x}`);
+console.log(`usijng imported function ${add(ID, 2)} and ${multiply(3, 5)}, ${str}`)
