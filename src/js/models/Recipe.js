@@ -14,7 +14,6 @@ export default class Recipe {
             this.img = res.data.recipe.image_url;
             this.url = res.data.recipe.source_url;
             this.ingredients = res.data.recipe.ingredients;
-            console.log(res);
         } catch (error) {
             console.log(error);
             alert('Someting went wrong!');
@@ -29,5 +28,23 @@ export default class Recipe {
 
     calcServings() {
         this.servings = 4;
+    }
+
+    parseIngredients() {
+        const unitsLong = ['tablespoons', 'tablespoon', 'ounce', 'ounces', 'teaspoon', 'teaspoons', 'cups', 'pounds'];
+        const unitShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
+
+        const newIngredients = this.ingredients.map(el => {
+            // 1) Uniforms units
+            let ingredient = el.toLowerCase();
+            unitsLong.forEach((unit, i) => {
+
+            });
+
+            // 2) Rmove parentheses
+
+            // 3) Parse ingredients into count, unit and ingredient
+        });
+        this.ingredients = newIngredients;
     }
 }
