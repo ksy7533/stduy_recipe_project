@@ -42,6 +42,13 @@ const controlSearch = async() => {
     }
 }
 
+window.addEventListener('load', () => {
+    state.likes = new Likes();
+    state.likes.readStorage();
+    likesView.toggleLikeMenu(state.likes.getNumLikse());
+    state.likes.likes.forEach(like => likesView.renderLike(like));
+});
+
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
@@ -108,9 +115,6 @@ elements.shopping.addEventListener('click', e => {
         state.list.updateCount(id, val);
     }
 });
-
-state.likes = new Likes();
-likesView.toggleLikeMenu(state.likes.getNumLikse());
 
 const controllLike = () => {
     if (!state.likes) state.likes = new Likes();
